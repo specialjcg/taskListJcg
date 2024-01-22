@@ -1,0 +1,48 @@
+
+
+/* SCSS HEX */
+$russian-violet: #3c1642ff
+$caribbean-current: #086375ff
+$turquoise: #1dd3b0ff
+$green-yellow: #affc41ff
+$light-green: #b2ff9eff
+
+
+$gradient-right: linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%)
+.task-list-container
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+  gap: 16px
+
+.task-container
+  padding: 16px
+/* Apply custom styles to the mat-card with the custom class */
+.custom-mat-card
+  background-color: $green-yellow /* Set your desired background color */
+  color: $russian-violet /* Set your desired text color */
+
+
+
+
+
+.task-item
+  display: flex
+  align-items: center
+  background: $gradient-right
+  color: $caribbean-current
+  padding: 16px
+  border-radius: 8px
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+  transition: transform 0.3s ease-in-out
+
+
+
+
+
+.task-item:hover
+  transform: scale(1.05)
+
+
+.checkbox
+  margin-right: 8px /* Add spacing between checkbox and task description */
+

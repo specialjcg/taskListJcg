@@ -1,0 +1,19 @@
+<div class="task-container">
+  <mat-card class="custom-mat-card">
+    <mat-card-header>
+      <mat-card-title>Task List</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="task-list-container">
+        <div *ngFor="let task of taskList" class="task-item">
+          <!-- Task Checkbox -->
+          <mat-checkbox [(ngModel)]="task.completed" class="checkbox"></mat-checkbox>
+
+          <!-- Task Description -->
+          <span class="task-description">{{ task.description }}</span>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
