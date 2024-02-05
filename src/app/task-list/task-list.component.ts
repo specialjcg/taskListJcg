@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NameService} from "../name.service";
-import { Task } from '../task';
+import {Task, TaskList, TaskRest, toTaskList} from '../task';
 
 @Component({
   selector: 'app-task-list',
@@ -18,8 +18,8 @@ export class TaskListComponent  implements OnInit{
 
   fetchTaskList(): void {
     this.nameService.getTaskList().subscribe(
-      (tasks: Task[]) => {
-        this.taskList = tasks;
+      (tasks: TaskList) => {
+        this.taskList = toTaskList(tasks.tasks);
       },
       (error) => {
         console.error('Error fetching task list', error);

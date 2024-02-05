@@ -2,17 +2,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Task } from './task';
+import { Task, TaskList, TaskRest } from './task';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NameService {
-  private baseUrl = 'http://localhost:8080';  // Assurez-vous que cette URL correspond à votre backend.
+  private baseUrl = 'http://127.0.0.1:4000/';  // Assurez-vous que cette URL correspond à votre backend.
 
   constructor(private http: HttpClient) {}
 
-  getTaskList(): Observable<Task[]> {
-    return this.http.get<Task[]>(`${this.baseUrl}/tasks/list`);
+  getTaskList(): Observable<TaskList> {
+    return this.http.get<TaskList>(`${this.baseUrl}api/tasks`);
   }
 }
