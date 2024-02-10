@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NameService} from "../name.service";
-import {Task, TaskList, TaskRest, toTaskList} from '../task';
+import {Task, TaskList, TaskRest, toTask, toTaskList} from '../task';
 
 @Component({
   selector: 'app-task-list',
@@ -25,5 +25,10 @@ export class TaskListComponent  implements OnInit{
         console.error('Error fetching task list', error);
       }
     );
+  }
+
+  valid() {
+    const newlist: Task[]=this.taskList!.filter(team=>team.completed)
+    this.nameService.postTaskList(toTask(newlist)).subscribe();  
   }
 }

@@ -13,6 +13,9 @@ export class NameService {
   constructor(private http: HttpClient) {}
 
   getTaskList(): Observable<TaskList> {
-    return this.http.get<TaskList>(`${this.baseUrl}api/tasks`);
+    return this.http.get<TaskList>(`${this.baseUrl}api/teams`);
+  }
+  postTaskList(taskList: TaskRest[]) {
+    return this.http.post(`${this.baseUrl}api/teamspost`, taskList);
   }
 }

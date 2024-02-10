@@ -21,4 +21,15 @@ export function toTaskList(tasks: TaskRest[]): Task[] {
   })
   
   return taskList;
+}
+export function toTask(tasks: Task[]): TaskRest[] {
+  let taskList: TaskRest[] = [];
+  tasks.forEach(task => {
+    taskList.push({
+      name: task.description,
+      completed: task.completed
+    })
+  })
+
+  return taskList;
 } 
