@@ -15,7 +15,10 @@ export class NameService {
   getTaskList(): Observable<TaskList> {
     return this.http.get<TaskList>(`${this.baseUrl}api/teams`);
   }
+  getTaskLisChoose(): Observable<TaskList> {
+    return this.http.get<TaskList>(`${this.baseUrl}api/teamsChoose`);
+  }
   postTaskList(taskList: TaskRest[]) {
-    return this.http.post(`${this.baseUrl}api/teamspost`, taskList);
+    return this.http.post(`${this.baseUrl}api/teamspost`, JSON.stringify(taskList));
   }
 }

@@ -29,6 +29,18 @@ export class TaskListComponent  implements OnInit{
 
   valid() {
     const newlist: Task[]=this.taskList!.filter(team=>team.completed)
-    this.nameService.postTaskList(toTask(newlist)).subscribe();  
+    this.nameService.postTaskList(toTask(newlist)).subscribe(
+       );
+  }
+
+  choose() {
+    this.nameService.getTaskLisChoose().subscribe(
+      (tasks: TaskList) => {
+        this.taskList = toTaskList(tasks.tasks);
+      },
+      (error) => {
+        console.error('Error fetching task list', error);
+      }
+    )
   }
 }

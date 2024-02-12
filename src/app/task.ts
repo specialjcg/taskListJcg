@@ -19,7 +19,7 @@ export function toTaskList(tasks: TaskRest[]): Task[] {
       completed: task.completed
     })
   })
-  
+
   return taskList;
 }
 export function toTask(tasks: Task[]): TaskRest[] {
@@ -32,4 +32,4 @@ export function toTask(tasks: Task[]): TaskRest[] {
   })
 
   return taskList;
-} 
+}
